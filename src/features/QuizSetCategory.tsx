@@ -43,7 +43,7 @@ export function QuizSetCategory(p: Props) {
           }}
           value={selectedCategoryId}
         >
-          <Box overflowY="auto" maxHeight={500} minWidth={300} mx={4}>
+          <Box overflowY="auto" maxHeight={400} minWidth={300} mx={4}>
             <SimpleGrid columns={[1, 3, 4]} mt={"30"} gap={4}>
               {radioCardList}
             </SimpleGrid>
