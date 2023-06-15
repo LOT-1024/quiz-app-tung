@@ -64,7 +64,7 @@ export function QuizPlay(p: Props) {
 
   const progressBar = () => {
     return (
-      <Wrap mt={50}>
+      <Wrap mt={50} justify='center'>
         {p.questions.map((_, i) => {
           return (
             <WrapItem key={i}>
