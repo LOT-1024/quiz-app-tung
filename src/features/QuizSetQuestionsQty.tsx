@@ -29,7 +29,7 @@ export function QuizSetQuestionsQty(p: Props) {
         </Box>
       </Flex>
 
-      <Flex mt={"60"} position={"fixed"} right={['35%', '35%', 150]} top={"60%"}>
+      <Flex mt={"60"} position={"fixed"} right={['35%', '35%', 150]} top={"50%"}>
         <Button
           onClick={() => p.onNext(questionQty)}
           rightIcon={<ArrowForwardIcon />}

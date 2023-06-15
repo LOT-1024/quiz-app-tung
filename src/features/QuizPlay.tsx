@@ -8,7 +8,8 @@ import {
   RadioGroup,
   Text,
   Box,
-  HStack,
+  Wrap,
+  WrapItem
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { shuffleArray } from "../utils";
@@ -63,24 +64,25 @@ export function QuizPlay(p: Props) {
 
   const progressBar = () => {
     return (
-      <HStack mt={50}>
+      <Wrap mt={50}>
         {p.questions.map((_, i) => {
           return (
-            <Box
-              key={i}
-              h={3}
-              backgroundColor={
-                i >= currentQuizItemIndex
-                  ? "gray.200"
-                  : history[i] === true
-                  ? "green.300"
-                  : "red.300"
-              }
-              w={25}
-            />
+            <WrapItem key={i}>
+              <Box
+                h={3}
+                backgroundColor={
+                  i >= currentQuizItemIndex
+                    ? "gray.200"
+                    : history[i] === true
+                    ? "green.300"
+                    : "red.300"
+                }
+                w={25}
+              />
+            </WrapItem>
           );
         })}
-      </HStack>
+      </Wrap>
     );
   };
   const radioList = availableAnswers.map((anwer_, i) => {
@@ -104,7 +106,9 @@ export function QuizPlay(p: Props) {
 
   return (
     <Flex direction={"column"} alignItems={"center"} justify={"center"} px={5}>
-      {progressBar()}
+      <Box minW={300} mx={5}>
+        {progressBar()}
+      </Box>
       <Box position={"absolute"} top={50} right={50}>
         {questionStatus === "unanswered" && (
           <Timer durationSec={10} onFinished={() => outOftime()} />
@@ -133,7 +137,7 @@ export function QuizPlay(p: Props) {
       </RadioGroup>
       {questionStatus !== "unanswered" && (
         <Lottie
-          style={{ marginTop: 100, height: 150 }}
+          style={{ marginTop: 100, height: 150, position: 'fixed', top: '60%' }}
           lottieRef={lottieRef}
           animationData={questionStatus == "valid" ? validAnim : invalidAnim}
           loop={false}

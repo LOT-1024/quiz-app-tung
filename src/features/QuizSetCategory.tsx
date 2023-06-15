@@ -51,7 +51,7 @@ export function QuizSetCategory(p: Props) {
         </RadioGroup>
       </Flex>
 
-      <Flex mt={"60"} position={"fixed"} right={['35%', '35%', 150]} top={"60%"}>
+      <Flex mt={"60"} position={"fixed"} right={['35%', '35%', 150]} top={"50%"}>
         <Button
           onClick={() => p.onNext(selectedCategoryId)}
           rightIcon={<ArrowForwardIcon />}

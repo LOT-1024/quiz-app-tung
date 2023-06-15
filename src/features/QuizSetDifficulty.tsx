@@ -42,7 +42,7 @@ export function QuizSetDifficulty(p: Props) {
         </RadioGroup>
       </Flex>
 
-      <Flex mt={"60"} position={"fixed"} right={['40%', '40%', 150]} top={"60%"}>
+      <Flex mt={"60"} position={"fixed"} right={['40%', '40%', 150]} top={"50%"}>
         <Button
           onClick={() => p.onNext(selectedDifficulty)}
           rightIcon={<ArrowForwardIcon />}
